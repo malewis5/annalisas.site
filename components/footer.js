@@ -6,7 +6,7 @@ export default function Footer() {
       <Container>
         <div className="py-28 flex flex-col lg:flex-row items-center">
           <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Annalisa Garofalo
+            Annalisas.site™
           </h3>
           <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
             <a
@@ -22,6 +22,14 @@ export default function Footer() {
               Follow on Medium
             </a>
           </div>
+        </div>
+        <div>
+          <a
+            href="https://www.matthew-lewis.online"
+            className="text-xs text-slate-500 hover:underline hover:text-slate-900"
+          >
+            Powered by ©MatTech LLC 2022
+          </a>
         </div>
       </Container>
     </footer>

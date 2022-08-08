@@ -33,12 +33,22 @@ export default function Meta() {
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta name="description" content={`Annalisa Garofalo's blog`} />
+      <meta property="og:title" content={"Annalisa's Site"} />
+      <meta property="og:site_name" content={"Annalisa's Site"} />
+      <meta property="og:url" content={'www.annalisas.site'} />
       <meta
-        data-rh="true"
         property="og:description"
-        content="Read writing from Annalisa Garofalo on Medium. sometimes poet, sometimes unidentified flying object. Every day, Annalisa Garofalo and thousands of other voices read, write, and share important stories on Medium."
-      ></meta>
-      <meta property="og:image" content={HOME_OG_IMAGE_URL} />
+        content={
+          'Read writing from Annalisa Garofalo. sometimes poet, sometimes unidentified flying object.'
+        }
+      />
+      <meta property="og:type" content={'books.author'} />
+      <meta
+        property="og:image"
+        content={
+          'https://miro.medium.com/max/1200/1*kelfcQpH6ZKmNgDW9eAu3A.png'
+        }
+      />
     </Head>
   );
 }

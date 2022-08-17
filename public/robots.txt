@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://annalisa.site
+
+# Sitemaps
+Sitemap: https://annalisa.site/sitemap.xml

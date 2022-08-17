@@ -10,7 +10,6 @@ import Head from 'next/head';
 import PostBody from '../components/post-body';
 
 const me = ({ allPosts, preview, authorDetails }) => {
-  console.log(authorDetails[0].image);
   return (
     <Layout preview={preview}>
       <Container>

@@ -29,7 +29,7 @@ export default function Meta() {
       />
       <link rel="shortcut icon" href="/favicon/favicon.ico" />
 
-      <meta name="msapplication-TileColor" content="#000000" />
+      {/* <meta name="msapplication-TileColor" content="#000000" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
@@ -49,7 +49,7 @@ export default function Meta() {
         content={
           'https://miro.medium.com/max/1200/1*kelfcQpH6ZKmNgDW9eAu3A.png'
         }
-      />
+      /> */}
     </Head>
   );
 }

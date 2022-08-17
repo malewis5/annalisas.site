@@ -1,6 +1,6 @@
-import cn from 'classnames'
-import Link from 'next/link'
-import { imageBuilder } from '../lib/sanity'
+import cn from 'classnames';
+import Link from 'next/link';
+import { imageBuilder } from '../lib/sanity';
 
 export default function CoverImage({ title, url, imageObject, slug }) {
   const image = (
@@ -12,8 +12,9 @@ export default function CoverImage({ title, url, imageObject, slug }) {
         'hover:shadow-medium transition-shadow duration-200': slug,
       })}
       src={imageBuilder(imageObject).width(1240).height(540).url()}
+      title={title}
     />
-  )
+  );
 
   return (
     <div className="-mx-5 sm:mx-0">
@@ -25,5 +26,5 @@ export default function CoverImage({ title, url, imageObject, slug }) {
         image
       )}
     </div>
-  )
+  );
 }

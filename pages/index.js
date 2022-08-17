@@ -13,9 +13,6 @@ export default function Index({ allPosts, preview }) {
   return (
     <>
       <Layout preview={preview}>
-        <Head>
-          <title>Annalisa's Site</title>
-        </Head>
         <Container>
           <Intro />
           {heroPost && (

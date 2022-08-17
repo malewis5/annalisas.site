@@ -1,8 +1,11 @@
 /** @type {import('next-sitemap').IConfig} */
 const config = {
-  siteUrl: process.env.SITE_URL || 'https://annalisa.site',
+  siteUrl: process.env.SITE_URL || 'https://annalisas.site',
   generateIndexSitemap: false,
   generateRobotsTxt: true, // (optional)
+
+  //TODO: Add dynamic date to lastmod for posts.
+
   transform: async (config, path) => {
     // custom function to ignore the path
     // if (path == '/404') {

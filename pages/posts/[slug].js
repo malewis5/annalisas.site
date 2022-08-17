@@ -13,7 +13,6 @@ import PostTitle from '../../components/post-title';
 import { NextSeo, ArticleJsonLd } from 'next-seo';
 import Form from '../../components/form';
 import { imageBuilder } from '../../lib/sanity';
-import Head from 'next/head';
 
 function toPlainText(blocks = []) {
   return (
@@ -43,35 +42,37 @@ export default function Post({ post, morePosts, preview }) {
   return (
     <>
       <NextSeo
-        title={post.title}
+        title={post?.title}
         description={
-          post?.description ?? toPlainText(post.body).substring(0, 200)
+          post?.description ?? toPlainText(post?.body).substring(0, 200)
         }
-        canonical={`https://annalisas.site/posts/${post.slug}`}
+        canonical={`https://annalisas.site/posts/${post?.slug}`}
         additionalMetaTags={[
-          { name: 'keywords', content: post.tags },
-          { name: 'author', content: post.author.name },
-          { name: 'publisher', content: post.author.name },
+          { name: 'keywords', content: post?.tags },
+          { name: 'author', content: post?.author?.name },
+          { name: 'publisher', content: post?.author?.name },
         ]}
         openGraph={{
-          title: post.title,
+          title: post?.title,
           description:
-            post?.description ?? toPlainText(post.body).substring(0, 150),
-          url: `https://annalisas.site/posts/${post.slug}`,
+            post?.description ?? toPlainText(post?.body).substring(0, 150),
+          url: `https://annalisas.site/posts/${post?.slug}`,
           type: 'article',
           article: {
-            publishedTime: post.date,
+            publishedTime: post?.date,
             // modifiedTime: '2018-01-21T18:04:43Z',
             section: 'Writing',
-            authors: [post.author.name],
-            tags: post.tags,
+            authors: [post?.author?.name],
+            tags: post?.tags,
           },
           images: [
             {
-              url: imageBuilder(post.coverImage).width(850).height(650).url(),
+              url:
+                imageBuilder(post?.coverImage).width(850).height(650).url() ??
+                '',
               width: 850,
               height: 650,
-              alt: post?.coverImage?.alt ?? post.title,
+              alt: post?.coverImage?.alt ?? post?.title,
             },
           ],
         }}
@@ -85,38 +86,41 @@ export default function Post({ post, morePosts, preview }) {
             <>
               <article>
                 <PostHeader
-                  title={post.title}
-                  coverImage={post.coverImage}
-                  date={post.date}
-                  author={post.author}
+                  title={post?.title}
+                  coverImage={post?.coverImage}
+                  date={post?.date}
+                  author={post?.author}
                 />
                 <ArticleJsonLd
-                  url={`https://annalisas.site/posts/${post.slug}`}
-                  title={post.title}
+                  url={`https://annalisas.site/posts/${post?.slug}`}
+                  title={post?.title}
                   images={[
-                    imageBuilder(post.coverImage).width(850).height(650).url(),
+                    imageBuilder(post?.coverImage)
+                      .width(850)
+                      .height(650)
+                      .url() ?? '',
                   ]}
-                  datePublished={post.date}
+                  datePublished={post?.date}
                   authorName={[
                     {
-                      name: post.author.name,
+                      name: post?.author?.name,
                       url: 'https://annalisas.site/me',
                     },
                   ]}
                   publisherName="Annalisa Garofalo"
                   description={
                     post?.description ??
-                    toPlainText(post.body).substring(0, 150)
+                    toPlainText(post?.body).substring(0, 150)
                   }
                 />
-                <PostBody content={post.body} />
+                <PostBody content={post?.body} />
               </article>
 
-              <Comments comments={post.comments} />
-              <Form _id={post._id} />
+              <Comments comments={post?.comments} />
+              <Form _id={post?._id} />
 
               <SectionSeparator />
-              {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+              {morePosts?.length > 0 && <MoreStories posts={morePosts} />}
             </>
           )}
         </Container>
@@ -126,7 +130,7 @@ export default function Post({ post, morePosts, preview }) {
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  const data = await getPostAndMorePosts(params.slug, preview);
+  const data = await getPostAndMorePosts(params?.slug, preview);
   return {
     props: {
       preview,

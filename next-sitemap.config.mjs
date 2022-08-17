@@ -8,9 +8,9 @@ const config = {
 
   transform: async (config, path) => {
     // custom function to ignore the path
-    // if (path == '/404') {
-    //   return null;
-    // }
+    if (path == '/g') {
+      return null;
+    }
 
     // only create changefreq along with path
     // returning partial properties will result in generation of XML field with only returned values.

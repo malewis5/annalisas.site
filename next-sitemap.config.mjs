@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 const config = {
-  siteUrl: process.env.SITE_URL || 'https://annalisas.site',
+  siteUrl: process.env.SITE_URL || 'https://www.annalisas.site',
   generateIndexSitemap: false,
   generateRobotsTxt: true, // (optional)
 

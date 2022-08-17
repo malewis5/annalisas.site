@@ -1,7 +1,7 @@
 export default {
   titleTemplate: '%s | Annalisa Garofalo',
   defaultTitle: 'Annalisa Garofalo',
-  canonical: 'https://annalisas.site',
+  canonical: 'https://www.annalisas.site',
   additionalMetaTags: [
     { name: 'keywords', content: ['annalisa', 'garofalo', 'blog'] },
     { name: 'author', content: 'Annalisa Garofalo' },
@@ -12,7 +12,7 @@ export default {
   openGraph: {
     type: 'website',
     locale: 'en_IE',
-    url: 'https://annalisas.site/',
+    url: 'https://www.annalisas.site/',
     image: 'https://miro.medium.com/max/1200/1*kelfcQpH6ZKmNgDW9eAu3A.png',
     description:
       'Short stories, thoughts and poems from author Annalisa Garofalo, sometimes poet sometimes unidentified flying object.',

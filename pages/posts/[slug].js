@@ -46,7 +46,7 @@ export default function Post({ post, morePosts, preview }) {
         description={
           post?.description ?? toPlainText(post?.body).substring(0, 200)
         }
-        canonical={`https://annalisas.site/posts/${post?.slug}`}
+        canonical={`https://www.annalisas.site/posts/${post?.slug}`}
         additionalMetaTags={[
           { name: 'keywords', content: post?.tags },
           { name: 'author', content: post?.author?.name },
@@ -56,7 +56,7 @@ export default function Post({ post, morePosts, preview }) {
           title: post?.title,
           description:
             post?.description ?? toPlainText(post?.body).substring(0, 150),
-          url: `https://annalisas.site/posts/${post?.slug}`,
+          url: `https://www.annalisas.site/posts/${post?.slug}`,
           type: 'article',
           article: {
             publishedTime: post?.date,
@@ -92,7 +92,7 @@ export default function Post({ post, morePosts, preview }) {
                   author={post?.author}
                 />
                 <ArticleJsonLd
-                  url={`https://annalisas.site/posts/${post?.slug}`}
+                  url={`https://www.annalisas.site/posts/${post?.slug}`}
                   title={post?.title}
                   images={[
                     imageBuilder(post?.coverImage)
@@ -104,7 +104,7 @@ export default function Post({ post, morePosts, preview }) {
                   authorName={[
                     {
                       name: post?.author?.name,
-                      url: 'https://annalisas.site/me',
+                      url: 'https://www.annalisas.site/me',
                     },
                   ]}
                   publisherName="Annalisa Garofalo"
